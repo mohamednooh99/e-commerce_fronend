@@ -35,7 +35,7 @@ function Hero() {
         />
         {/* Overlay Content */}
         <div className="absolute bottom-1/2 left-20 md:left-96 z-10">
-          <h2 className="text-3xl font-bold sm:text-4xl text-teal-500 drop-shadow-md">
+          <h2 className="text-3xl font-bold sm:text-xl text-teal-500 drop-shadow-md ">
             Your Favourite Brand
           </h2>
         </div>
