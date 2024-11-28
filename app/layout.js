@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <CartContext.Provider value={{ cart, setCart,openCart, setOpenCart }}>
         <html lang="en"> 
-          {/* <CustomHead /> */}
+          <CustomHead />
           <body
             className={`${geistSans.variable} ${geistMono.variable}   antialiased grid h-screen grid-rows-[auto_1fr_auto]`}
           >
