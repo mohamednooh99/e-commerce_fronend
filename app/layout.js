@@ -31,10 +31,11 @@ export default function RootLayout({ children }) {
           {/* <CustomHead /> */}
           <Head>
             <title>Elessi Website store</title>
-            <meta
-              name="description"
-              content="This is a brief description of the page content, which will appear in search results."
-            />
+            <meta name="description" 
+                  content="Explore our collection of stylish clothing for men and women. Shop the latest trends in fashion,
+                            from casual wear to formal outfits. Free shipping on orders over $50." 
+             />
+
           </Head>
           <body
             className={`${geistSans.variable} ${geistMono.variable}   antialiased grid h-screen grid-rows-[auto_1fr_auto]`}
