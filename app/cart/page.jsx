@@ -40,7 +40,7 @@ function Cart() {
             <p className="text-s "> Home </p>
           </header>
           {loading ? (
-            <div className="flex flex items-center gap-4 mx-20 my-10">
+            <div className="flex flex items-center gap-4 mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
               <div className="bg-slate-200 animate-pulse rounded h-[100px] w-[100px]"></div>
               <div className="grid grid-cols-1 gap-y-2" >
                 <div className="bg-slate-200 animate-pulse rounded h-[20px] w-[90px]"></div>

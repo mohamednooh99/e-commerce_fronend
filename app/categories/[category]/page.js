@@ -49,11 +49,10 @@ function Category({ params }) {
           </div>
           {loading ? (
             <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
-              {Array(3)
-                .fill(null)
-                .map((_, index) => (
-                  <SkeletonUi key={index} />
-                ))}
+ 
+                {Array.from({ length: 3 }, (_, index) => (
+            <SkeletonUi key={index} />
+          ))}
             </div>
           ) : (
             <>

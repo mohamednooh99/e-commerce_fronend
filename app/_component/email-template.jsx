@@ -1,9 +1,9 @@
-import Image from "next/image";
+
 import * as React from "react";
 
 export const EmailTemplate = ({ body }) => (
   <div className="mx-auto px-4">
-      <h1>Welcome, {body.fullName}!
+      <h1>Welcome, {body.fullName} at Elssei website store!
       </h1>
   </div>
 );

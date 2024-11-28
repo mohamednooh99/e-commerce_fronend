@@ -23,13 +23,7 @@ function ProductInfo({ product }) {
     (i) => i?.product?.documentId === product?.documentId
   );  
 
-
-  // will complate late
-  //   const existingItemIndex  = cart.findIndex( (i) => i?.product?.documentId === product?.documentId );
-  //   if (existingItemIndex >= 0) {
-  //     // Item exists, update quantity
-  //     console.log(  cart[existingItemIndex].quantity += quantity );
-  // }
+ 
 
   const handelAddToCart = () => {
     if (!user) {

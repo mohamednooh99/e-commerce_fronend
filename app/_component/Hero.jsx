@@ -1,62 +1,68 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
 function Hero() {
   const [page, setPage] = useState(1);
 
+  // Memoized interval logic to prevent unnecessary rerenders
   useEffect(() => {
-    let int = setInterval(() => {
-      setPage((prev) => (prev + 1 >= 5 ? 1 : prev + 1));
+    const interval = setInterval(() => {
+      setPage((prev) => (prev + 1 > 4 ? 1 : prev + 1)); // Cycles from 1 to 4
     }, 7000);
-    return () => clearInterval(int);
+    return () => clearInterval(interval); // Cleanup on unmount
   }, []);
-  const handlePrev = () => {
-    setPage((prev) => (prev - 1 <= 0 ? 4 : prev - 1));
-  };
-  const handleNext = () => {
-    setPage((prev) => (prev + 1 >= 5 ? 1 : prev + 1));
-  };
+
+  // Handlers for navigation
+  const handlePrev = useCallback(() => {
+    setPage((prev) => (prev - 1 < 1 ? 4 : prev - 1)); // Cycles from 4 to 1
+  }, []);
+
+  const handleNext = useCallback(() => {
+    setPage((prev) => (prev + 1 > 4 ? 1 : prev + 1)); // Cycles from 1 to 4
+  }, []);
+
   return (
-    // slider
-    <div className="relative flex h-[500px] flex-col justify-center items-center">
-      <div className="absolute h-full w-full">
+    <section className="relative h-[500px] flex flex-col justify-center items-center">
+      {/* Background Image */}
+      <div className="absolute inset-0">
         <Image
-          className="w-full h-full object-cover object-center"
+          className="object-cover object-center"
+          src={`/image_${page}.webp`} // Dynamically loads the image
           fill
-          alt="image"
-          src={`/image_${page}.webp`} 
+          alt={`Slide ${page}`}
           priority
         />
-        <div className="z-10 absolute bottom-1/2 left-96 ">
-          <h2 className="text-3xl font-bold sm:text-4xl"> Your Favourite Brand </h2>
+        {/* Overlay Content */}
+        <div className="absolute bottom-1/2 left-20 md:left-96 z-10">
+          <h2 className="text-3xl font-bold sm:text-4xl text-teal-500 drop-shadow-md">
+            Your Favourite Brand
+          </h2>
         </div>
       </div>
+
+      {/* Navigation Arrows */}
       <div
         onClick={handlePrev}
-        className="z-10 absolute bottom-1/2 left-4 text-2xl 2xl:text-[40px] 2xl:left-80  "
+        className="absolute left-4 md:left-20 bottom-1/2 text-2xl cursor-pointer z-20"
       >
         <span
-          className="inline-block transition-transform hover:translate-x-1
-        motion-reduce:transform-none cursor-pointer text-teal-600 text-semibold hover:text-
-        "
+          className="text-teal-600 hover:text-teal-800 transition-transform transform hover:-translate-x-1"
         >
           &larr;
         </span>
       </div>
       <div
         onClick={handleNext}
-        className="z-10 absolute bottom-1/2 right-4 text-2xl 2xl:text-[40px] 2xl:right-80"
+        className="absolute right-4 md:right-20 bottom-1/2 text-2xl cursor-pointer z-20"
       >
         <span
-          className="inline-block transition-transform hover:-translate-x-1
-        motion-reduce:transform-none cursor-pointer text-teal-600 text-semibold hover:text-
-        "
+          className="text-teal-600 hover:text-teal-800 transition-transform transform hover:translate-x-1"
         >
           &rarr;
         </span>
       </div>
-    </div>
+    </section>
   );
 }
 

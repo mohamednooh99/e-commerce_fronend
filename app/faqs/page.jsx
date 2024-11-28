@@ -2,6 +2,9 @@ import React from "react";
 
 function Faqs() {
   return (
+    <section>
+
+    
     <div className="space-y-4 grid grid-cols-1 md:grid-cols-2">
       <details
         className="group border-s-4 border-teal-500 bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden"
@@ -128,6 +131,7 @@ function Faqs() {
         </p>
       </details>
     </div>
+    </section>
   );
 }
 

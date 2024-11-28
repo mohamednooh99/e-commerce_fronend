@@ -77,7 +77,7 @@ function Header() {
 
           {/* Logo */}
           <Link href="/" className=" text-center md:text-left">
-            <Image src="/logo_2.avif" alt="logo" width={80} height={50} priority />
+            <Image src="/logo_2.webp" alt="logo" width={80} height={50} priority />
           </Link>
 
           {/* Navigation Links - Single nav for both desktop and mobile */}

@@ -17,7 +17,7 @@ function Footer() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div >
               <div className="flex justify-center text-teal-600 sm:justify-start">
-                <Image src="/logo_2.avif" alt="logo" width={50} height={50} priority />
+                <Image src="/logo_2.webp" alt="logo" width={50} height={50} priority />
               </div>
 
               <p className="mt-6  text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left font-nunito text-medium tracking-widest">
