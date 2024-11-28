@@ -7,6 +7,7 @@ import Footer from "./_component/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 import { CartContext } from "./_context/CartContext";
 import { useState } from "react";
+import Head from "next/head";
 
 const geistSans = Roboto({
   src: "./fonts/GeistVF.woff",
