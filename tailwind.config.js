@@ -10,6 +10,15 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#312ECB",
+        secondry: "#007AFF",
+        main:"32aae4",
+      },
+      fontFamily: {
+        nunito: ['Nunito Sans', 'sans-serif'], 
+      },
+      screens: {
+        'xsm': '425px' , // Custom screen for 425px - 640px
       },
     },
   },
