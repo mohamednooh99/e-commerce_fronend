@@ -12,7 +12,8 @@ function ProductBanner({ product }) {
           alt="banner-image"
           width={400}
           height={380}
-          className="rouunded-t-lg size-auto  object-cover"
+          layout="responsive"
+          className="rounded-t-lg sm:w-full sm:h-auto  object-cover"
           priority
         />
       ) : (
