@@ -50,7 +50,7 @@ function ProductItem({ product }) {
           </p>
           <Link
             href={toPath}
-            className="text-teal-600 text-sm font-semibold transition-transform hover:-translate-y-1 hover:text-teal-800 tracking-wide"
+            className="text-teal-500 text-sm font-semibold border-teal-500 rounded transition-transform hover:-translate-y-1 hover:text-teal-600 hover:border-teal-600 tracking-wide"
           >
             Product Details →
           </Link>
