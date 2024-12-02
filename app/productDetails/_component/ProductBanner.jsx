@@ -1,24 +1,23 @@
 import Image from "next/image";
 import React from "react";
 
-function ProductBanner({ product }) {  
-
-    
+function ProductBanner({ product }) {
   return (
-    <div>
-      {product?.banner?.url ? (
-        <Image
-          src={product?.banner?.url}
-          alt="banner-image"
-          width={400}
-          height={380}
-          layout="responsive"
-          className="rounded-t-lg sm:w-full sm:h-auto  object-cover"
-          priority
-        />
-      ) : (
-        <div className="h-[400px] w-[300px] md:h-[300px]  md:w-[250px] sm:h-[230px] sm:w-[200px] bg-slate-200 animate-pulse"  >  </div>
-      )}
+    <div> 
+        {product?.banner?.url ? (
+          <Image
+            src={product?.banner?.url}
+            alt="banner-image"
+            width={400}
+            height={380}
+            className="rounded-t-lg h-[400px] object-cover"
+            priority
+          />
+        ) : (
+          <div className="h-[400px] w-[300px] md:h-[300px]  md:w-[250px] sm:h-[230px] sm:w-[200px] bg-slate-200 animate-pulse">
+            {" "}
+          </div>
+        )} 
     </div>
   );
 }

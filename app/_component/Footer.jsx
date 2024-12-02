@@ -2,16 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
+
+import { usePathname } from "next/navigation";
 
 function Footer() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  useEffect(() => {
-    setIsLoggedIn(window.location.href.toString().includes("sign-in"));
-  }, []);
+  
+  const pathname = usePathname();
+ 
+  if (pathname === "/sign-in" || pathname === "/sign-up") {
+    return null; // Do not render header
+  }
 
-  return (
-    !isLoggedIn && (
+  return ( 
       <footer className="bg-white">
         <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -263,7 +266,6 @@ function Footer() {
           </div>
         </div>
       </footer>
-    )
   );
 }
 

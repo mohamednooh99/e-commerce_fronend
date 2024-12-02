@@ -23,8 +23,9 @@ function ProductInfo({ product }) {
     (i) => i?.product?.documentId === product?.documentId
   );  
 
+ console.log(product?.instantDelivery);
  
-
+// add item to cart 
   const handelAddToCart = () => {
     if (!user) {
       router.push("/sign-in");
@@ -75,7 +76,7 @@ function ProductInfo({ product }) {
               {product?.description?.[0]?.children?.[0]?.text ||
                 "No description available."}
             </p>
-            <div className="text-xs">
+            <div className={`text-xs ${product?.instantDelivery == null ? "opacity-25":"opacity-100"}`}>
               {product?.instantDelivery}
               Eligible For Instant Delivery
             </div>

@@ -18,7 +18,8 @@ module.exports = {
         nunito: ['Nunito Sans', 'sans-serif'], 
       },
       screens: {
-        'xsm': '425px' , // Custom screen for 425px - 640px
+        'xxsm': '540px' ,// Custom screen for 540px - 640px
+        'xsm': '425px' , // Custom screen for 425px - 540px
       },
     },
   },

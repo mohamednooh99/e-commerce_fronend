@@ -8,7 +8,7 @@ function BreadCrumb({path}) {
         <li className="flex items-center">
           <Link
             href="/"
-            className="flex h-10 items-center gap-1.5 bg-gray-100 px-4 transition hover:text-gray-900"
+            className="flex h-10 items-center gap-1.5 bg-gray-100 px-1 sm:px-4 transition hover:text-gray-900"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ function BreadCrumb({path}) {
            {path?.split('/')[1]}
           </a>
         </li>
-        <li className="relative flex items-center">
+        <li className="relative flex items-center hidden sm:block">
           <span className="absolute inset-y-0 -start-px h-10 w-4 bg-gray-100 [clip-path:_polygon(0_0,_0%_100%,_100%_50%)] rtl:rotate-180"></span>
 
           <a

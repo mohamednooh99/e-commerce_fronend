@@ -34,7 +34,7 @@ function ProductSection() {
   const productsRemaining = productList.length - visibleCount;
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6 lg:px-8 lg:pt-24">
+    <div className="mx-auto max-w-screen-xl px-4 pb-6 pt-16 sm:px-6  lg:px-8 lg:pt-24">
       {/* Featured Categories */}
       <div className="flex justify-center text-center mx-auto">
         <FeaturedCategory productList={productList} />

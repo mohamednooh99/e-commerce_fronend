@@ -8,22 +8,24 @@ import { PiShoppingBag } from "react-icons/pi";
 import { CartContext } from "../_context/CartContext";
 import CartApis from "../_utils/CartApis";
 import Cart from "./Cart";
+import { usePathname } from "next/navigation";
 
-function Header() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+function Header() { 
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle for mobile menu
   const { cart, setCart, openCart, setOpenCart } = useContext(CartContext);
   const [loading, setLoading] = useState(true);
   const { user } = useUser();  
-
-  useEffect(() => {
-    setIsLoggedIn(window.location.href.toString().includes("sign-in"));
-  }, []);
-
+  const pathname = usePathname(); 
   
 
-  useEffect(() => {
-    user && getCartItems();
+  // useEffect(() => {
+  //   setIsLoggedIn(window.location.href.toString().includes("sign-in"));
+  // }, []);
+
+ 
+
+  useEffect(() => { 
+    user ? getCartItems() : setLoading(false)
   }, [user]);
 
   const getCartItems = () => {
@@ -49,8 +51,10 @@ function Header() {
       });
   };
 
-  return (
-    !isLoggedIn && (
+  if (pathname === "/sign-in" || pathname === "/sign-up") {
+    return null; // Do not render header
+  }
+  return (  
       <header className="bg-white mt-4">
         <div className="flex max-w-screen-xl items-center justify-between h-16 px-4 sm:px-6 lg:px-8 mx-auto">
           {/* Mobile Menu Toggle Button */}
@@ -179,8 +183,7 @@ function Header() {
             </>
           )}
         </div>
-      </header>
-    )
+      </header> 
   );
 }
 
